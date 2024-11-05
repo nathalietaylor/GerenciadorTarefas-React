@@ -1,8 +1,8 @@
 import { useState } from "react";
 
 function AddTask({ onAddTaskSubmit }) {
-  const [title, setTitle] = useState("222");
-  const [description, setDescription] = useState("333");
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
 
   return (
     <div className="space-y-4 p-6 bg-slate-200 rounded-md shadow flex flex-col">
@@ -23,9 +23,10 @@ function AddTask({ onAddTaskSubmit }) {
       />
       <button
         onClick={() => {
-          //verificar se titulo e descrição estão preenchidos
-          if (!title.trim() || !description.trim())
-            onAddTaskSubmit(title, description);
+          if (!title.trim() || !description.trim()) {
+            return alert("Preencha o título e descrição da tarefa.");
+          }
+          onAddTaskSubmit(title, description);
           setTitle("");
           setDescription("");
         }}
