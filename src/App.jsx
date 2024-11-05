@@ -3,7 +3,6 @@ import AddTask from "./components/addTask";
 import Tasks from "./components/tasks";
 import { v4 } from "uuid";
 
-
 function App() {
   const [tasks, setTasks] = useState([
     {
@@ -45,7 +44,7 @@ function App() {
 
   function onAddTaskSubmit(title, description) {
     const newTask = {
-      id: v4(); // para id aleatório
+      id: v4(), //criar id aleatório
       title: title,
       description: description,
       isCompleted: false,
